@@ -106,6 +106,14 @@
 .social-icons a:hover {
     transform: scale(1.2);
 }
+     details summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
     </style>
 </head>
 
@@ -117,18 +125,21 @@
         <p>Pelajar | Tech Enthusiast | Future Developer</p>
 
         <div class="card">
-            <h2>About Me</h2>
+            <details>
+            <summary><h2>About Me</h2></summary>
             <p>
                 I'm a college student at Semarang State Polytechnic (Polines). 
                 I'm majoring in Informatics Engineering (Diploma III).
                 Because I was from Game development, I'm making tons of games with the Unity.
                 But, due to Limited Space of my Laptop. I deleted some of them.
-                And now I'm Still Learning Web Developing, <s>Although I'm Using AI to learn</s>
+                And now I'm Still Learning Web Developing, <s>Although I'm Using AI to learn it</s>
             </p>
+            </details>
         </div>
 
         <div class="card">
-            <h2>Skill</h2>
+        <details></details>
+        <summary><h2>Skill</h2></summary>
     <div class="skill-icons">
         <i class="fab fa-html5"></i>
         <i class="fab fa-css3-alt"></i>
@@ -137,10 +148,12 @@
         <i class="devicon-c-plain colored"></i>
         <i class="devicon-cplusplus-plain colored"></i>
     </div>
+        </details>
         </div>
         
         <div class="card">
-    <h2>Media Sosial</h2>
+        <details>
+    <summary><h2>Media Sosial</h2></summary>
     <div class="social-icons">
         <a href="https://instagram.com/frzi.707._" target="_blank">
             <i class="fab fa-instagram"></i>
@@ -158,6 +171,7 @@
             <i class="fab fa-github"></i>
         </a>
     </div>
+    </details>
 </div>
         <footer>
             © 2026 Fairuz Imanulhaq
@@ -167,6 +181,7 @@
 </body>
 
 </html>
+
 
 
 
