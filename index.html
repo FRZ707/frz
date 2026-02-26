@@ -58,21 +58,22 @@
         .card:hover {
             transform: translateY(-5px);
         }
+        
+.card-header {
+    cursor: pointer;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 15px;
-            background: #1e3c72;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    opacity: 0;
+}
 
-        .btn:hover {
-            background: #2c5364;
-        }
+.card.active .card-content {
+    max-height: 500px;
+    opacity: 1;
+}
 
         footer {
             margin-top: 30px;
@@ -116,7 +117,14 @@ details summary::-webkit-details-marker {
 }
     </style>
 </head>
-
+    
+<script>
+function toggleCard(element) {
+    const card = element.parentElement;
+    card.classList.toggle("active");
+}
+</script>
+    
 <body>
 
     <div class="container">
@@ -125,8 +133,10 @@ details summary::-webkit-details-marker {
         <p>Pelajar | Tech Enthusiast | Future Developer</p>
 
         <div class="card">
-            <details>
-            <summary><h2>About Me</h2></summary>
+            <div class="card-header" onclick="toggleCard(this)">
+            <h2>About Me</h2>
+            </div>
+            <div class="card-content">
             <p>
                 I'm a college student at Semarang State Polytechnic (Polines). 
                 I'm majoring in Informatics Engineering (Diploma III).
@@ -134,26 +144,30 @@ details summary::-webkit-details-marker {
                 But, due to Limited Space of my Laptop. I deleted some of them.
                 And now I'm Still Learning Web Developing, <s>Although I'm Using AI to learn it</s>
             </p>
-            </details>
+            </div>
         </div>
 
         <div class="card">
-        <details>
-        <summary><h2>Skill</h2></summary>
-    <div class="skill-icons">
+        <div class="card-header" onclick="toggleCard(this)">
+        <h2>Skill</h2>
+        </div>
+        <div class="card-content">   
+        <div class="skill-icons">
         <i class="fab fa-html5"></i>
         <i class="fab fa-css3-alt"></i>
         <i class="fa-brands fa-unity"></i>
         <i class="devicon-csharp-plain colored"></i>
         <i class="devicon-c-plain colored"></i>
         <i class="devicon-cplusplus-plain colored"></i>
-    </div>
-        </details>
-        </div>
+     </div>
+ </div>
+</div>
         
         <div class="card">
-        <details>
-    <summary><h2>Media Sosial</h2></summary>
+        <div class="card-header" onclick="toggleCard(this)">
+        <h2>Media Sosial</h2>
+        </div>
+        <div class = "card-content">
     <div class="social-icons">
         <a href="https://instagram.com/frzi.707._" target="_blank">
             <i class="fab fa-instagram"></i>
@@ -171,7 +185,7 @@ details summary::-webkit-details-marker {
             <i class="fab fa-github"></i>
         </a>
     </div>
-    </details>
+    </div>
 </div>
         <footer>
             © 2026 Fairuz Imanulhaq
@@ -181,6 +195,7 @@ details summary::-webkit-details-marker {
 </body>
 
 </html>
+
 
 
 
